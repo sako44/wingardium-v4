@@ -155,7 +155,7 @@ function BenefitItemsGrid({
         {benefits.map((item, index) =>
           index === 0 || index === 1 ? (
             <BenefitsItem
-              key={item.id}
+              key={index}
               id={item.id}
               title={item.title}
               description={item.description}
@@ -175,7 +175,7 @@ function BenefitItemsGrid({
         {benefits.map((item, index) =>
           index === 2 || index === 3 ? (
             <BenefitsItem
-              key={item.id}
+              key={index}
               id={item.id}
               title={item.title}
               description={item.description}

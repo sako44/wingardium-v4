@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import NavBarLinks from "./NavBarLinks";
 import { useState } from "react";
 import NavBarLinkItems from "./NavbarLinkItems";
+import {navLink} from "./NavBarLinks";
 
 //bg-[#d6c9ac]
 
@@ -144,7 +145,7 @@ function NavBar() {
               className=" shadow-xl border-primary
                hover:bg-secondary hover:text-primary border text-[16px] rounded-[15px] px-7 py-5 transition duration-300 ease-in-out"
             >
-              <Link href={t("nav_button_6_href") as any}>
+              <Link href={t("nav_button_6_href") as keyof navLink}>
                 {t("nav_button_6_title")}
               </Link>
             </Button>

@@ -1,5 +1,6 @@
 "use client";
 import { Cross as Fade } from "hamburger-react";
+import type { Route } from "next";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +9,7 @@ import MotionDiv from "./MotionDiv";
 import { useTranslations } from "next-intl";
 import TranslateButton from "./TranslateButton";
 import { socialItems } from "@/data/allData";
+import { navLink } from "./NavBarLinks";
 
 // ====================== Mobile Navbar ======================
 const MobileNavbar = () => {
@@ -103,11 +105,16 @@ const NavbarMenu = ({
 );
 
 // ====================== Navbar Links ======================
+type NavLink = {
+  title: string;
+  url: string; // خليها string مو any
+  active: boolean;
+};
 const NavbarLinks = ({
   navLinks,
   closeMenu,
 }: {
-  navLinks: { title: string; url: string; active: boolean }[];
+  navLinks: NavLink[];
   closeMenu: () => void;
 }) => (
   <div className="flex flex-col gap-8 mt-7 items-start">
@@ -121,7 +128,7 @@ const NavbarLinks = ({
         } px-0 text-4xl hover:text-primary hover:bg-transparent`}
         onClick={closeMenu}
       >
-        <Link href={link.url as any}>{link.title}</Link>
+        <Link href={link.url as keyof navLink}>{link.title}</Link>
       </Button>
     ))}
   </div>

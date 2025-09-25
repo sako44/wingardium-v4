@@ -8,6 +8,17 @@ type NavBarLinksProps = {
   title: string;
 };
 
+export type navLink = { 
+  "/": string;
+  "/features": string;
+  "/who-should-use": string;
+  "/services": string;
+  "/plans": string;
+  "/contact": string;
+  "/terms": string;
+  "#details": string;
+};
+
 function NavBarLinks({ href, title }: NavBarLinksProps) {
   const pathname = usePathname();
   const isActiveLink =
@@ -24,7 +35,7 @@ function NavBarLinks({ href, title }: NavBarLinksProps) {
     >
       <Link
         prefetch={true}
-        href={href as any}
+        href={href as keyof navLink}
         className={`"" ${
           isActiveLink ? " border-b border-secondary text-primary " : ""
         } `}
