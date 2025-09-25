@@ -32,7 +32,7 @@ function BenefitsItem({
       <h3 className="text-2xl font-semibold text-primary w-[85%]">{title}</h3>
       <ul className=" list-disc space-y-5  ">
         {description.map((desc, index) => (
-          <li className="max-w-[85%] mx-auto text-slate-700 font-normal">
+          <li key={index} className="max-w-[85%] mx-auto text-slate-700 font-normal">
             {desc}
           </li>
         ))}

@@ -1,6 +1,5 @@
 "use client";
 import { Cross as Fade } from "hamburger-react";
-import type { Route } from "next";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
